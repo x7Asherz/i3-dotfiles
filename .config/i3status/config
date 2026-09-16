@@ -1,0 +1,58 @@
+# i3status configuration file.
+# UTF-8 Encoding
+
+general {
+        colors = true
+        color_good = "#a6e3a1"      # สีเขียวนุ่มๆ (สถานะปกติ)
+        color_degraded = "#f9e2af"  # สีเหลือง (เริ่มเหลือน้อย/แจ้งเตือน)
+        color_bad = "#f38ba8"       # สีแดง (วิกฤต/ไม่เชื่อมต่อ)
+        interval = 5
+}
+
+order += "wireless _first_"
+order += "ethernet _first_"
+order += "disk /"
+order += "memory"
+order += "load"
+order += "battery all"
+order += "tztime local"
+
+wireless _first_ {
+        # แสดงไอคอนเสาสัญญาณ ชื่อ Wi-Fi และเปอร์เซ็นต์ (ซ่อน IP เพื่อลดความรกรอบข้าง)
+        format_up = " 󰤨  %essid (%quality) "
+        format_down = "" # ซ่อนโมดูลเมื่อไม่ได้ต่อ Wi-Fi
+}
+
+ethernet _first_ {
+        format_up = " 󰈀 %speed "
+        format_down = "" # ซ่อนโมดูลเมื่อไม่ได้เสียบสายแลน
+}
+
+disk "/" {
+        format = " 󰋊 %avail "
+}
+
+memory {
+        format = " 󰍛 %used "
+        threshold_degraded = "1G"
+        format_degraded = " 󰀦 RAM %available "
+}
+
+load {
+        format = " 󰻠 %1min "
+}
+
+battery all {
+        format = " %status %percentage (%remaining) "
+        format_down = " No battery "
+        status_chr = "󰂄"
+        status_bat = "󱟞"
+        status_unk = "󰂑"
+        status_full = "󰁹"
+        low_threshold = 20
+        threshold_type = percentage
+}
+
+tztime local {
+        format = " 󰸗 %Y-%m-%d  󱑒 %I:%M %p "
+}
