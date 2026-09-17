@@ -10,5 +10,5 @@ i3-wm i3status alacritty nemo dmenu dex feh pulseaudio-utils maim xclip xdotool
 ttf-jetbrains-mono-nerd
 
 ## Theme
-gtk: kali-themes (kali-dark)
+gtk: kali-themes (kali-dark) </br>
 icon: flat-remix
