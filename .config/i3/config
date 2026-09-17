@@ -32,7 +32,7 @@ font pango:JetBrainsMono Nerd Font 10
 exec --no-startup-id dex --autostart --environment i3
 
 # Wallpaper
-exec feh --bg-scale ~/wallpaper/anime-girl-blue-mountain-desktop-wallpaper.jpg
+exec feh --bg-scale ~/wallpaper/anime-girl-blue-mountain.jpg
 
 # Keyboard
 bindcode $mod+65 exec --no-startup-id "setxkbmap -query | grep -q 'layout:\s\+us' && setxkbmap -layout th || setxkbmap -layout us"
